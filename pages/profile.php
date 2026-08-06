@@ -150,7 +150,8 @@ $activeId = null;
 
     <title>Profile Settings - Lumio</title>
 
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/profile.css">
 
 </head>
 

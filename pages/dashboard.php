@@ -27,7 +27,8 @@ $activeId = null;
 <head>
     <meta charset="UTF-8">
     <title>Lumio - Dashboard</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
 </head>
 <body>
     <div class="app-layout">

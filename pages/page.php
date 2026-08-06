@@ -19,7 +19,8 @@ if (!$page) {
 <head>
     <meta charset="UTF-8">
     <title><?= htmlspecialchars($page["title"]) ?> - Lumio</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/page.css">
 </head>
 <body>
     <div class="app-layout">

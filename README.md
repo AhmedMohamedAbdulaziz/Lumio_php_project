@@ -1,4 +1,4 @@
-﻿# Lumio ✨ — Personal Workspace Manager
+# Lumio ✨ — Personal Workspace Manager
 
 > A clean, minimal, and intuitive workspace management system inspired by Notion — built with PHP & MySQL.
 
@@ -66,7 +66,13 @@ This project was built as a training project for the **NTI (National Telecommuni
 project_nti/
 ├── index.php               # Entry point — redirects to login or dashboard
 ├── css/
-│   └── style.css           # Global stylesheet
+│   ├── base.css            # Shared styles (reset, body, sidebar, nav, badges)
+│   ├── auth.css            # login.php & register.php styles
+│   ├── dashboard.css       # dashboard.php styles (stats, cards)
+│   ├── page.css            # page.php styles (editor, toolbar, actions)
+│   ├── profile.css         # profile.php styles (form, inputs)
+│   ├── modules.css         # Shared module placeholder styles (tasks, calendar, etc.)
+│   └── style.css           # Legacy stylesheet (kept for reference)
 ├── js/
 │   └── script.js           # Frontend scripts
 ├── sql/
@@ -75,26 +81,27 @@ project_nti/
     ├── config.php          # Database connection & session start
     ├── auth_check.php      # Authentication guard
     ├── sidebar.php         # Shared sidebar component
-    ├── login.php           # Login page
-    ├── register.php        # Registration page
+    ├── login.php           # Login page           → base.css + auth.css
+    ├── register.php        # Registration page    → base.css + auth.css
     ├── logout.php          # Session destroy & redirect
-    ├── dashboard.php       # Main dashboard with stats
-    ├── page.php            # View a single workspace page
-    ├── create_page.php     # Create a new page
-    ├── update_page.php     # Edit an existing page
-    ├── delete_page.php     # Delete a page
-    ├── profile.php         # User profile page
-    ├── file_manager.php    # File management
-    ├── tasks.php           # Task management
-    ├── calendar.php        # Calendar view
-    ├── projects.php        # Projects overview
-    ├── team.php            # Team members
-    ├── analytics.php       # Analytics dashboard
-    ├── notifications.php   # Notifications center
-    ├── templates.php       # Page templates
-    ├── settings.php        # User settings
-    └── trash.php           # Trash / deleted pages
+    ├── dashboard.php       # Main dashboard       → base.css + dashboard.css
+    ├── page.php            # View/edit workspace page → base.css + page.css
+    ├── create_page.php     # Create a new page (via POST)
+    ├── update_page.php     # Edit an existing page (via POST)
+    ├── delete_page.php     # Delete a page (via POST)
+    ├── profile.php         # User profile         → base.css + profile.css
+    ├── file_manager.php    # File management      → base.css + modules.css
+    ├── tasks.php           # Task management      → base.css + modules.css
+    ├── calendar.php        # Calendar view        → base.css + modules.css
+    ├── projects.php        # Projects overview    → base.css + modules.css
+    ├── team.php            # Team members         → base.css + modules.css
+    ├── analytics.php       # Analytics dashboard  → base.css + modules.css
+    ├── notifications.php   # Notifications center → base.css + modules.css
+    ├── templates.php       # Page templates       → base.css + modules.css
+    ├── settings.php        # User settings        → base.css + modules.css
+    └── trash.php           # Trash / deleted pages → base.css + modules.css
 ```
+
 
 ---
 

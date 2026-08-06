@@ -1,0 +1,85 @@
+/* =============================================
+   page.css — Styles for page.php (workspace page editor)
+   ============================================= */
+
+/* ---------- Page Toolbar ---------- */
+.page-toolbar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.icon-input {
+    width: 55px;
+    font-size: 30px;
+    text-align: center;
+    background: transparent;
+    border: none;
+    color: #fff;
+}
+
+.title-input {
+    flex: 1;
+    font-size: 32px;
+    font-weight: bold;
+    background: transparent;
+    border: none;
+    color: #fff;
+}
+.title-input:focus, .icon-input:focus { outline: none; }
+
+/* ---------- Content Area ---------- */
+.content-area {
+    width: 100%;
+    min-height: 55vh;
+    background: transparent;
+    border: none;
+    color: #d4d4d4;
+    font-size: 16px;
+    line-height: 1.8;
+    resize: none;
+}
+.content-area:focus { outline: none; }
+
+/* ---------- Page Actions ---------- */
+.page-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.page-actions button {
+    background: #4f8cff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    color: #fff;
+    cursor: pointer;
+    font-weight: bold;
+}
+.page-actions button:hover { background: #3d78e6; }
+
+#saveStatus { color: #7ee787; font-size: 13px; }
+
+/* ---------- Sub Actions ---------- */
+.sub-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 30px;
+    border-top: 1px solid #2e2e2e;
+    padding-top: 20px;
+}
+
+.sub-actions form button {
+    background: #2c2c2c;
+    border: 1px solid #3a3a3a;
+    color: #e6e6e6;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.sub-actions form button:hover { background: #333; }
+
+.danger-btn { color: #ff6b6b !important; }

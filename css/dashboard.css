@@ -1,0 +1,63 @@
+/* =============================================
+   dashboard.css — Styles for dashboard.php
+   ============================================= */
+
+.dashboard-header {
+    margin-bottom: 30px;
+}
+
+.dashboard-header h1 {
+    font-size: 28px;
+    margin-bottom: 6px;
+}
+
+.dashboard-header p {
+    color: #a3a3a3;
+    font-size: 15px;
+}
+
+/* ---------- Stats Grid ---------- */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+    margin-bottom: 35px;
+}
+
+.stat-card {
+    background: #202020;
+    border: 1px solid #2e2e2e;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.stat-card .stat-icon {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.stat-card .stat-value {
+    font-size: 26px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.stat-card .stat-label {
+    font-size: 13px;
+    color: #a3a3a3;
+    margin-top: 4px;
+}
+
+/* ---------- Card Panel ---------- */
+.card-panel {
+    background: #202020;
+    border: 1px solid #2e2e2e;
+    border-radius: 10px;
+    padding: 25px;
+    margin-bottom: 25px;
+}
+
+.card-panel h2 {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
