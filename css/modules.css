@@ -1,11 +1,4 @@
-/* =======================================================
-   modules.css — Styles for module placeholder pages:
-   tasks.php, calendar.php, projects.php, team.php,
-   analytics.php, file_manager.php, notifications.php,
-   templates.php, settings.php, trash.php
-   ======================================================= */
 
-/* ---------- Dashboard Header (shared header style) ---------- */
 .dashboard-header {
     margin-bottom: 30px;
 }

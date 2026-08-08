@@ -142,7 +142,7 @@ $activeId = null;
 ?>
 
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="">
 
 <head>
 
@@ -152,7 +152,6 @@ $activeId = null;
 
     <link rel="stylesheet" href="../css/base.css">
     <link rel="stylesheet" href="../css/profile.css">
-
 </head>
 
 <body>
@@ -221,21 +220,16 @@ $activeId = null;
                             value="<?= htmlspecialchars($user['email']) ?>"
                             required
                         >
-
                     </div>
-
-
                     <div class="form-group">
-
                         <label>
                             New Password
-                            (leave blank to keep current)
                         </label>
 
                         <input
                             type="password"
                             name="password"
-                            placeholder="••••••••"
+                            placeholder="Enter Your New Password"
                         >
 
                     </div>
