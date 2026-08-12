@@ -249,7 +249,7 @@ $tasks = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         type="text"
                         name="title"
                         placeholder="Enter task title"
-                        required
+                        
                     >
 
                 </div>
@@ -468,7 +468,7 @@ $tasks = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                             type="text"
                                             name="title"
                                             value="<?= htmlspecialchars($task["title"]) ?>"
-                                            required
+                                            
                                         >
 
 

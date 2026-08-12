@@ -67,11 +67,17 @@ project_nti/
 ├── index.php               # Entry point — redirects to login or dashboard
 ├── css/
 │   ├── base.css            # Shared styles (reset, body, sidebar, nav, badges)
+│   ├── analytic.css        # analytics.php styles
 │   ├── auth.css            # login.php & register.php styles
+│   ├── calendar.css        # calendar.php styles
 │   ├── dashboard.css       # dashboard.php styles (stats, cards)
+│   ├── file_manager.css    # file_manager.php styles
 │   ├── page.css            # page.php styles (editor, toolbar, actions)
 │   ├── profile.css         # profile.php styles (form, inputs)
-│   ├── modules.css         # Shared module placeholder styles (tasks, calendar, etc.)
+│   ├── task.css            # tasks.php & projects.php styles
+│   ├── team.css            # team.php styles
+│   ├── templates.css       # templates.php styles
+│   ├── trash.css           # trash.php styles
 │   └── style.css           # Legacy stylesheet (kept for reference)
 ├── js/
 │   └── script.js           # Frontend scripts
@@ -90,16 +96,16 @@ project_nti/
     ├── update_page.php     # Edit an existing page (via POST)
     ├── delete_page.php     # Delete a page (via POST)
     ├── profile.php         # User profile         → base.css + profile.css
-    ├── file_manager.php    # File management      → base.css + modules.css
-    ├── tasks.php           # Task management      → base.css + modules.css
-    ├── calendar.php        # Calendar view        → base.css + modules.css
-    ├── projects.php        # Projects overview    → base.css + modules.css
-    ├── team.php            # Team members         → base.css + modules.css
-    ├── analytics.php       # Analytics dashboard  → base.css + modules.css
-    ├── notifications.php   # Notifications center → base.css + modules.css
-    ├── templates.php       # Page templates       → base.css + modules.css
-    ├── settings.php        # User settings        → base.css + modules.css
-    └── trash.php           # Trash / deleted pages → base.css + modules.css
+    ├── file_manager.php    # File management      → base.css + file_manager.css
+    ├── tasks.php           # Task management      → base.css + task.css
+    ├── calendar.php        # Calendar view        → base.css + calendar.css
+    ├── projects.php        # Projects overview    → base.css + task.css
+    ├── team.php            # Team members         → base.css + team.css
+    ├── analytics.php       # Analytics dashboard  → base.css + analytic.css
+    ├── notifications.php   # Notifications center → base.css + task.css
+    ├── templates.php       # Page templates       → base.css + templates.css
+    ├── settings.php        # User settings        → base.css + task.css
+    └── trash.php           # Trash / deleted pages → base.css + trash.css
 ```
 
 

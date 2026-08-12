@@ -1,0 +1,180 @@
+.file-upload-box,
+.files-container {
+    background: #202020;
+    border: 1px solid #2e2e2e;
+    border-radius: 16px;
+    padding: 24px 28px;
+    margin-top: 24px;
+}
+
+.file-upload-box h2,
+.files-container h2 {
+    color: #ffffff;
+    font-size: 22px;
+    margin: 0 0 18px;
+}
+
+
+/* =========================
+   Upload
+========================= */
+
+.file-upload-form {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.file-upload-form input[type="file"] {
+    width: 330px;
+    padding: 10px;
+    border: 1px solid #3a3a3a;
+    border-radius: 8px;
+    background: #2c2c2c;
+    color: #e6e6e6;
+}
+
+.upload-btn {
+    border: none;
+    padding: 10px 22px;
+    border-radius: 8px;
+    background: #2563eb;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.upload-btn:hover {
+    background: #1d4ed8;
+    transform: translateY(-1px);
+}
+
+
+/* =========================
+   Files
+========================= */
+
+.files-container {
+    margin-top: 24px;
+}
+
+.file-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 8px;
+    border-bottom: 1px solid #2e2e2e;
+}
+
+.file-item:last-child {
+    border-bottom: none;
+}
+
+.file-info {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.file-icon {
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #2a2a2a;
+    border-radius: 10px;
+    font-size: 21px;
+}
+
+.file-name {
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.file-size {
+    color: #a3a3a3;
+    font-size: 13px;
+}
+
+
+/* =========================
+   File Actions
+========================= */
+
+.file-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.download-btn,
+.delete-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    padding: 9px 16px;
+    border-radius: 7px;
+    font-size: 13px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.download-btn {
+    background: #16a34a;
+    color: white;
+}
+
+.download-btn:hover {
+    background: #15803d;
+}
+
+.delete-btn {
+    background: #dc2626;
+    color: white;
+}
+
+.delete-btn:hover {
+    background: #b91c1c;
+}
+
+
+/* =========================
+   Empty State
+========================= */
+
+.no-files {
+    text-align: center;
+    padding: 35px;
+    color: #a3a3a3;
+}
+
+
+/* =========================
+   Mobile
+========================= */
+
+@media (max-width: 700px) {
+    .file-upload-form {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .file-upload-form input[type="file"] {
+        width: auto;
+    }
+
+    .file-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .file-actions {
+        width: 100%;
+    }
+}

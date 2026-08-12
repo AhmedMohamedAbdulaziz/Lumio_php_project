@@ -2,8 +2,10 @@
 
 require_once "config.php";
 require_once "auth_check.php";
+require_once "theme.php";
 
 $userId = $_SESSION["user_id"];
+$theme = getUserTheme($pdo, $userId);
 
 $template = $_GET["template"] ?? "";
 
@@ -151,7 +153,7 @@ $files = $stmt->fetchAll();
 
 <!DOCTYPE html>
 
-<html lang="en" dir="ltr">
+<html lang="en" dir="ltr" class="<?= $theme === 'light' ? 'light-mode' : 'dark-mode' ?>">
 
 <head>
 
@@ -171,7 +173,7 @@ $files = $stmt->fetchAll();
 
     <link
         rel="stylesheet"
-        href="../css/modules.css"
+        href="../css/file_manager.css"
     >
 
 </head>

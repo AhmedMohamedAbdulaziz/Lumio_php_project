@@ -7,8 +7,9 @@ require_once "theme.php";
 $userId = $_SESSION["user_id"];
 $theme = getUserTheme($pdo, $userId);
 
-$message = "";
-$error = "";
+$message = $_SESSION["flash_message"] ?? "";
+$error = $_SESSION["flash_error"] ?? "";
+unset($_SESSION["flash_message"], $_SESSION["flash_error"]);
 
 
 /* =========================================
@@ -23,6 +24,12 @@ $stmt = $pdo->prepare($sql);
 $stmt->execute([$userId]);
 
 $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+if (!$user) {
+    session_destroy();
+    header("Location: login.php");
+    exit;
+}
 
 
 /* =========================================
@@ -85,47 +92,72 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $_POST["email"] ?? ""
         );
 
+        $user["username"] = $username;
+        $user["email"] = $email;
 
-        if ($username === "" || $email === "") {
 
-            $error =
-                "Username and email are required.";
+        if ($username === "") {
 
-        } elseif (
-            !filter_var(
-                $email,
-                FILTER_VALIDATE_EMAIL
-            )
-        ) {
+            $error = "Username is required";
 
-            $error =
-                "Please enter a valid email.";
+        } elseif (strlen($username) < 3 || strlen($username) > 20) {
+
+            $error = "Username must be between 3 and 20 characters";
+
+        } elseif (!preg_match("/^[a-zA-Z0-9_]+$/", $username)) {
+
+            $error = "Username can only contain letters, numbers, and underscores";
+
+        } elseif ($email === "") {
+
+            $error = "Email is required";
+
+        } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+
+            $error = "Please enter a valid email address";
 
         } else {
 
-            $sql = "UPDATE users
-                    SET username = ?,
-                        email = ?
-                    WHERE id = ?";
+            $stmt = $pdo->prepare(
+                "SELECT id FROM users WHERE (email = ? OR username = ?) AND id != ?"
+            );
 
-            $stmt = $pdo->prepare($sql);
+            $stmt->execute([$email, $username, $userId]);
 
-            $stmt->execute([
-                $username,
-                $email,
-                $userId
-            ]);
+            if ($stmt->fetch()) {
 
+                $error = "Username or email is already in use";
 
-            $user["username"] =
-                $username;
+            } else {
 
-            $user["email"] =
-                $email;
+                try {
 
+                    $sql = "UPDATE users
+                            SET username = ?,
+                                email = ?
+                            WHERE id = ?";
 
-            $message =
-                "Account information updated successfully.";
+                    $stmt = $pdo->prepare($sql);
+
+                    $stmt->execute([
+                        $username,
+                        $email,
+                        $userId
+                    ]);
+
+                    $_SESSION["username"] = $username;
+
+                    $_SESSION["flash_message"] =
+                        "Account information updated successfully.";
+
+                    header("Location: settings.php");
+                    exit;
+
+                } catch (PDOException $e) {
+
+                    $error = "Could not update account. Please try again.";
+                }
+            }
         }
     }
 
@@ -162,12 +194,29 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $error =
                 "New passwords do not match.";
 
-        } elseif (
-            strlen($newPassword) < 6
-        ) {
+        } elseif (strlen($newPassword) < 8) {
 
-            $error =
-                "Password must be at least 6 characters.";
+            $error = "Password must be at least 8 characters";
+
+        } elseif (!preg_match("/[A-Z]/", $newPassword)) {
+
+            $error = "Password must contain at least one uppercase letter";
+
+        } elseif (!preg_match("/[a-z]/", $newPassword)) {
+
+            $error = "Password must contain at least one lowercase letter";
+
+        } elseif (!preg_match("/[0-9]/", $newPassword)) {
+
+            $error = "Password must contain at least one number";
+
+        } elseif (!preg_match("/[\W_]/", $newPassword)) {
+
+            $error = "Password must contain at least one special character";
+
+        } elseif (preg_match("/\s/", $newPassword)) {
+
+            $error = "Password cannot contain spaces";
 
         } else {
 
@@ -197,35 +246,43 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
             } else {
 
-                $newPasswordHash =
-                    password_hash(
-                        $newPassword,
-                        PASSWORD_DEFAULT
-                    );
+                try {
+
+                    $newPasswordHash =
+                        password_hash(
+                            $newPassword,
+                            PASSWORD_DEFAULT
+                        );
 
 
-                $sql = "UPDATE users
-                        SET password = ?
-                        WHERE id = ?";
+                    $sql = "UPDATE users
+                            SET password = ?
+                            WHERE id = ?";
 
-                $stmt = $pdo->prepare($sql);
+                    $stmt = $pdo->prepare($sql);
 
-                $stmt->execute([
-                    $newPasswordHash,
-                    $userId
-                ]);
+                    $stmt->execute([
+                        $newPasswordHash,
+                        $userId
+                    ]);
 
 
-                $message =
-                    "Password changed successfully.";
+                    $_SESSION["flash_message"] =
+                        "Password changed successfully.";
+
+                    header("Location: settings.php");
+                    exit;
+
+                } catch (PDOException $e) {
+
+                    $error = "Could not update password. Please try again.";
+                }
             }
         }
     }
 
 
-    /* =====================================
-       Appearance
-    ===================================== */
+
 
     if ($action === "appearance") {
 
@@ -539,7 +596,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                         <input
                             type="password"
                             name="new_password"
-                            minlength="6"
+                            minlength="8"
                             required
                         >
 
@@ -555,7 +612,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                         <input
                             type="password"
                             name="confirm_password"
-                            minlength="6"
+                            minlength="8"
                             required
                         >
 

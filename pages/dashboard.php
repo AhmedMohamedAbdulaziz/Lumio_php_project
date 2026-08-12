@@ -1,8 +1,10 @@
 <?php
 require_once "config.php";
 require_once "auth_check.php";
+require_once "theme.php";
 
 $userId = $_SESSION["user_id"];
+$theme = getUserTheme($pdo, $userId);
 
 $stmt = $pdo->prepare("SELECT COUNT(*) FROM pages WHERE user_id = ?");
 $stmt->execute([$userId]);
@@ -23,7 +25,7 @@ $recentPages = $stmt->fetchAll();
 $activeId = null;
 ?>
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="ltr" class="<?= $theme === 'light' ? 'light-mode' : 'dark-mode' ?>">
 <head>
     <meta charset="UTF-8">
     <title>Lumio - Dashboard</title>

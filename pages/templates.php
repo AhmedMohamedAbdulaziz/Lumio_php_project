@@ -2,6 +2,10 @@
 
 require_once "config.php";
 require_once "auth_check.php";
+require_once "theme.php";
+
+$userId = $_SESSION["user_id"];
+$theme = getUserTheme($pdo, $userId);
 
 $templates = [
     [
@@ -29,7 +33,7 @@ $templates = [
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="<?= $theme === 'light' ? 'light-mode' : 'dark-mode' ?>">
 
 <head>
 
@@ -41,7 +45,7 @@ $templates = [
 
     <link rel="stylesheet" href="../css/base.css">
 
-    <link rel="stylesheet" href="../css/modules.css">
+    <link rel="stylesheet" href="../css/templates.css">
 
 </head>
 

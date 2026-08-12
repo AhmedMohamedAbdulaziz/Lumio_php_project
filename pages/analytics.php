@@ -2,10 +2,12 @@
 
 require_once "config.php";
 require_once "auth_check.php";
+require_once "theme.php";
 
 $activeId = null;
 
 $userId = $_SESSION["user_id"];
+$theme = getUserTheme($pdo, $userId);
 
 /* Total Pages */
 $stmt = $pdo->prepare("
@@ -32,7 +34,7 @@ $stmt = $pdo->prepare("
     SELECT COUNT(*)
     FROM tasks
     WHERE user_id = ?
-    AND status = 'done'
+    AND (status = 'Completed' OR status = 'done')
 ");
 $stmt->execute([$userId]);
 $completedTasks = $stmt->fetchColumn();
@@ -72,7 +74,7 @@ $totalFiles = $stmt->fetchColumn();
 ?>
 
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="ltr" class="<?= $theme === 'light' ? 'light-mode' : 'dark-mode' ?>">
 
 <head>
 
@@ -82,7 +84,7 @@ $totalFiles = $stmt->fetchColumn();
 
     <link rel="stylesheet" href="../css/base.css">
 
-    <link rel="stylesheet" href="../css/modules.css">
+    <link rel="stylesheet" href="../css/analytic.css">
 
 </head>
 
