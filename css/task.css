@@ -1,0 +1,1855 @@
+/* =======================================================
+   modules.css — Styles for module placeholder pages:
+   tasks.php, calendar.php, projects.php, team.php,
+   analytics.php, file_manager.php, notifications.php,
+   templates.php, settings.php, trash.php
+   ======================================================= */
+
+/* ---------- Dashboard Header (shared header style) ---------- */
+.dashboard-header {
+    margin-bottom: 30px;
+}
+
+.dashboard-header h1 {
+    font-size: 28px;
+    margin-bottom: 6px;
+}
+
+.dashboard-header p {
+    color: #a3a3a3;
+    font-size: 15px;
+}
+
+/* ---------- Team / Module Placeholder ---------- */
+.team-placeholder {
+    background: #202020;
+    border: 1px dashed #3a3a3a;
+    border-radius: 12px;
+    padding: 40px;
+    text-align: center;
+    max-width: 650px;
+    margin: 40px auto;
+}
+
+.team-placeholder .module-icon {
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+
+.team-placeholder h2 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.team-placeholder p {
+    color: #a3a3a3;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/*------------------------Task.php------------------------*/
+
+/* =============================================
+                 Lumio Modules
+   ============================================= */
+
+
+
+.module-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.module-header h1 {
+    color: #e6e6e6;
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+
+.module-header p {
+    color: #8f8f8f;
+    font-size: 14px;
+}
+
+
+.task-form {
+    background: #202020;
+    border: 1px solid #2e2e2e;
+    border-radius: 10px;
+    padding: 25px;
+    margin-bottom: 30px;
+}
+
+.task-form h2 {
+    color: #e6e6e6;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    color: #cfcfcf;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    background: #191919;
+    color: #e6e6e6;
+    border: 1px solid #3a3a3a;
+    border-radius: 6px;
+    padding: 10px 12px;
+    outline: none;
+    font-size: 14px;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    border-color: #79a8ff;
+}
+
+.form-group textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+
+.btn {
+    border: none;
+    border-radius: 6px;
+    padding: 9px 15px;
+    cursor: pointer;
+    font-size: 13px;
+    transition: 0.2s;
+}
+
+.btn-primary {
+    background: #2c3e5f;
+    color: #79a8ff;
+    border: 1px solid #3b5278;
+}
+
+.btn-primary:hover {
+    background: #354b70;
+}
+
+.btn-save {
+    background: rgba(126, 231, 135, 0.12);
+    color: #7ee787;
+    border: 1px solid rgba(126, 231, 135, 0.25);
+}
+
+.btn-save:hover {
+    background: rgba(126, 231, 135, 0.2);
+}
+
+.btn-delete {
+    background: rgba(255, 107, 107, 0.1);
+    color: #ff6b6b;
+    border: 1px solid rgba(255, 107, 107, 0.2);
+}
+
+.btn-delete:hover {
+    background: rgba(255, 107, 107, 0.18);
+}
+
+
+.tasks-section {
+    margin-top: 30px;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.section-header h2 {
+    color: #e6e6e6;
+    font-size: 20px;
+}
+
+.section-header span {
+    color: #737373;
+    font-size: 13px;
+}
+
+
+
+.tasks-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+
+
+.task-card {
+    background: #202020;
+    border: 1px solid #2e2e2e;
+    border-radius: 10px;
+    padding: 20px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+
+    transition: border-color 0.2s;
+}
+
+.task-card:hover {
+    border-color: #3f3f3f;
+}
+
+.task-info {
+    flex: 1;
+}
+
+.task-info h3 {
+    color: #e6e6e6;
+    font-size: 17px;
+    margin-bottom: 8px;
+}
+
+.task-info p {
+    color: #8f8f8f;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 12px;
+}
+
+
+.task-meta {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.task-meta span {
+    background: #2a2a2a;
+    color: #a3a3a3;
+    border: 1px solid #353535;
+    padding: 4px 9px;
+    border-radius: 12px;
+    font-size: 12px;
+}
+
+.task-meta .priority {
+    color: #79a8ff;
+}
+
+
+.task-actions {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.task-actions form {
+    margin: 0;
+}
+
+.task-actions select {
+    background: #191919;
+    color: #d4d4d4;
+    border: 1px solid #3a3a3a;
+    border-radius: 6px;
+    padding: 8px 10px;
+    cursor: pointer;
+    outline: none;
+}
+
+.task-actions select:focus {
+    border-color: #79a8ff;
+}
+
+
+.edit-task {
+    position: relative;
+}
+
+.edit-task summary {
+    list-style: none;
+    cursor: pointer;
+
+    background: #2a2a2a;
+    color: #d4d4d4;
+
+    border: 1px solid #3a3a3a;
+    border-radius: 6px;
+
+    padding: 8px 14px;
+    font-size: 13px;
+}
+
+.edit-task summary:hover {
+    background: #333333;
+}
+
+.edit-task form {
+    position: absolute;
+    right: 0;
+    top: 42px;
+    z-index: 20;
+
+    width: 320px;
+
+    background: #202020;
+    border: 1px solid #3a3a3a;
+    border-radius: 10px;
+
+    padding: 18px;
+
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+}
+
+.edit-task input,
+.edit-task textarea,
+.edit-task select {
+    width: 100%;
+    background: #191919;
+    color: #e6e6e6;
+
+    border: 1px solid #3a3a3a;
+    border-radius: 6px;
+
+    padding: 9px 10px;
+    margin-bottom: 10px;
+
+    outline: none;
+}
+
+.edit-task textarea {
+    min-height: 80px;
+    resize: vertical;
+}
+
+.edit-task input:focus,
+.edit-task textarea:focus,
+.edit-task select:focus {
+    border-color: #79a8ff;
+}
+
+.empty-state {
+    text-align: center;
+
+    background: #202020;
+    border: 1px dashed #3a3a3a;
+    border-radius: 10px;
+
+    padding: 50px 20px;
+    margin-top: 20px;
+}
+
+.empty-state h3 {
+    color: #e6e6e6;
+    margin-bottom: 8px;
+}
+
+.empty-state p {
+    color: #737373;
+}
+
+@media (max-width: 768px) {
+
+    .main-content {
+        padding: 25px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .task-card {
+        flex-direction: column;
+    }
+
+    .task-actions {
+        width: 100%;
+    }
+
+    .edit-task form {
+        position: static;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+}
+
+/*------------------Projects.php------------------*/
+
+/* =====================================================
+   LUMIO - PROJECTS MODULE
+===================================================== */
+
+
+/* =========================
+   PROJECT PAGE HEADER
+========================= */
+
+.module-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.module-header h1 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #f1f1f1;
+    margin-bottom: 8px;
+}
+
+.module-header p {
+    color: #888;
+    font-size: 14px;
+}
+
+
+/* =========================
+   ADD PROJECT CARD
+========================= */
+
+.task-form {
+    background: #202020;
+    border: 1px solid #2e2e2e;
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 35px;
+}
+
+.task-form h2 {
+    font-size: 20px;
+    color: #eeeeee;
+    margin-bottom: 22px;
+}
+
+
+/* =========================
+   FORM
+========================= */
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 7px;
+
+    color: #bdbdbd;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+
+    width: 100%;
+
+    padding: 11px 12px;
+
+    background: #191919;
+    color: #eeeeee;
+
+    border: 1px solid #353535;
+    border-radius: 7px;
+
+    outline: none;
+
+    font-size: 14px;
+
+    transition:
+        border-color 0.2s,
+        background 0.2s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+
+    border-color: #4f8cff;
+    background: #1c1c1c;
+}
+
+.form-group textarea {
+
+    min-height: 100px;
+
+    resize: vertical;
+}
+
+
+/* =========================
+   FORM ROW
+========================= */
+
+.form-row {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 18px;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+.btn {
+
+    border: none;
+
+    border-radius: 7px;
+
+    padding: 10px 17px;
+
+    font-size: 13px;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.15s,
+        background 0.2s;
+}
+
+.btn:hover {
+
+    transform: translateY(-1px);
+}
+
+
+/* Primary */
+
+.btn-primary {
+
+    background: #2c3e5f;
+
+    color: #8bb5ff;
+}
+
+.btn-primary:hover {
+
+    background: #354c72;
+}
+
+
+/* Save */
+
+.btn-save {
+
+    background: #234d2a;
+
+    color: #7ee787;
+}
+
+.btn-save:hover {
+
+    background: #2d6236;
+}
+
+
+/* Delete */
+
+.btn-delete {
+
+    background: #4d2424;
+
+    color: #ff6b6b;
+}
+
+.btn-delete:hover {
+
+    background: #682f2f;
+}
+
+
+/* =========================
+   SECTION HEADER
+========================= */
+
+.section-header {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 15px;
+}
+
+.section-header h2 {
+
+    color: #eeeeee;
+
+    font-size: 21px;
+}
+
+.section-header span {
+
+    color: #777;
+
+    font-size: 13px;
+}
+
+
+/* =========================
+   PROJECT LIST
+========================= */
+
+.tasks-list {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fill, minmax(320px, 1fr));
+
+    gap: 16px;
+}
+
+
+/* =========================
+   PROJECT CARD
+========================= */
+
+.task-card {
+
+    background: #202020;
+
+    border: 1px solid #2e2e2e;
+
+    border-radius: 12px;
+
+    padding: 20px;
+
+    min-height: 190px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    transition:
+        transform 0.2s,
+        border-color 0.2s,
+        background 0.2s;
+}
+
+.task-card:hover {
+
+    transform: translateY(-3px);
+
+    border-color: #444;
+
+    background: #222;
+}
+
+
+/* =========================
+   PROJECT INFO
+========================= */
+
+.task-info h3 {
+
+    font-size: 18px;
+
+    color: #f1f1f1;
+
+    margin-bottom: 10px;
+}
+
+.task-info p {
+
+    color: #909090;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+
+    margin-bottom: 15px;
+}
+
+
+/* =========================
+   META
+========================= */
+
+.task-meta {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 7px;
+}
+
+.task-meta span {
+
+    padding: 5px 9px;
+
+    background: #292929;
+
+    border: 1px solid #383838;
+
+    border-radius: 20px;
+
+    color: #aaa;
+
+    font-size: 11px;
+}
+
+
+/* Priority */
+
+.task-meta .priority {
+
+    color: #79a8ff;
+
+    border-color: rgba(79,140,255,0.3);
+
+    background: rgba(79,140,255,0.08);
+}
+
+
+/* =========================
+   PROJECT ACTIONS
+========================= */
+
+.task-actions {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    margin-top: 20px;
+
+    padding-top: 15px;
+
+    border-top: 1px solid #2c2c2c;
+
+    flex-wrap: wrap;
+}
+
+.task-actions select {
+
+    background: #191919;
+
+    color: #ddd;
+
+    border: 1px solid #383838;
+
+    border-radius: 6px;
+
+    padding: 8px;
+
+    font-size: 12px;
+
+    outline: none;
+}
+
+.task-actions select:focus {
+
+    border-color: #4f8cff;
+}
+
+
+/* =========================
+   EDIT DROPDOWN
+========================= */
+
+.edit-task {
+
+    position: relative;
+}
+
+.edit-task summary {
+
+    list-style: none;
+
+    cursor: pointer;
+
+    background: #292929;
+
+    color: #ccc;
+
+    border: 1px solid #383838;
+
+    border-radius: 6px;
+
+    padding: 8px 12px;
+
+    font-size: 12px;
+}
+
+.edit-task summary:hover {
+
+    background: #333;
+
+    color: white;
+}
+
+.edit-task summary::-webkit-details-marker {
+
+    display: none;
+}
+
+
+/* Edit Form */
+
+.edit-task form {
+
+    position: absolute;
+
+    right: 0;
+
+    top: 40px;
+
+    z-index: 20;
+
+    width: 300px;
+
+    background: #202020;
+
+    border: 1px solid #444;
+
+    border-radius: 10px;
+
+    padding: 15px;
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,0.5);
+}
+
+.edit-task input,
+.edit-task textarea,
+.edit-task select {
+
+    width: 100%;
+
+    padding: 9px;
+
+    margin-bottom: 10px;
+
+    background: #191919;
+
+    color: #ddd;
+
+    border: 1px solid #383838;
+
+    border-radius: 6px;
+
+    outline: none;
+}
+
+.edit-task textarea {
+
+    min-height: 80px;
+
+    resize: vertical;
+}
+
+
+/* =========================
+   EMPTY PROJECTS
+========================= */
+
+.empty-state {
+
+    padding: 60px 30px;
+
+    text-align: center;
+
+    background: #202020;
+
+    border: 1px dashed #3a3a3a;
+
+    border-radius: 12px;
+}
+
+.empty-state h3 {
+
+    color: #eee;
+
+    margin-bottom: 8px;
+}
+
+.empty-state p {
+
+    color: #777;
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+    .tasks-list {
+
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .main-content {
+
+        padding: 25px;
+    }
+
+    .form-row {
+
+        grid-template-columns: 1fr;
+    }
+
+    .module-header h1 {
+
+        font-size: 26px;
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    .main-content {
+
+        padding: 18px;
+    }
+
+    .task-form {
+
+        padding: 18px;
+    }
+
+    .task-card {
+
+        padding: 16px;
+    }
+
+    .task-actions {
+
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+    .task-actions form,
+    .task-actions select,
+    .task-actions .btn {
+
+        width: 100%;
+    }
+
+    .edit-task form {
+
+        position: static;
+
+        width: 100%;
+
+        margin-top: 10px;
+    }
+
+}
+
+/*---------------SETTINGS Task---------------*/
+/* =========================
+   SETTINGS
+========================= */
+
+.settings-card {
+    background: #202020;
+    border: 1px solid #2e2e2e;
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 20px;
+    max-width: 800px;
+}
+
+.settings-card h2 {
+    color: #eeeeee;
+    font-size: 20px;
+    margin-bottom: 7px;
+}
+
+.settings-description {
+    color: #777;
+    font-size: 13px;
+    margin-bottom: 22px;
+}
+
+.settings-card .form-group {
+    margin-bottom: 18px;
+}
+
+.settings-card input[type="text"],
+.settings-card input[type="email"],
+.settings-card input[type="password"],
+.settings-card select {
+    width: 100%;
+    padding: 11px;
+    background: #191919;
+    color: #eeeeee;
+    border: 1px solid #353535;
+    border-radius: 7px;
+    outline: none;
+}
+
+.settings-card input:focus,
+.settings-card select:focus {
+    border-color: #4f8cff;
+}
+
+.setting-option {
+    margin-bottom: 20px;
+}
+
+.setting-option label {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    color: #bbb;
+    font-size: 14px;
+}
+
+.setting-option input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+}
+
+/*---------------NOTIFICATIONS Task---------------*/
+
+/* =========================================
+   NOTIFICATIONS
+========================================= */
+
+.notifications-section {
+    max-width: 1000px;
+}
+
+.notification-counter {
+    display: inline-block;
+
+    margin-bottom: 20px;
+
+    padding: 8px 14px;
+
+    background: #202020;
+
+    border: 1px solid #2e2e2e;
+
+    border-radius: 20px;
+
+    color: #888;
+
+    font-size: 13px;
+}
+
+.notification-counter strong {
+    color: #79a8ff;
+
+    margin-right: 4px;
+}
+
+
+/* =========================================
+   Notification List
+========================================= */
+
+.notifications-list {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+}
+
+
+/* =========================================
+   Notification Card
+========================================= */
+
+.notification-card {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 20px;
+
+    background: #202020;
+
+    border: 1px solid #2e2e2e;
+
+    border-radius: 10px;
+
+    transition: 0.2s;
+}
+
+.notification-card:hover {
+
+    background: #242424;
+
+    border-color: #444;
+}
+
+
+/* Unread */
+
+.notification-card.unread {
+
+    border-left: 3px solid #4f8cff;
+}
+
+
+/* Read */
+
+.notification-card.read {
+
+    opacity: 0.65;
+}
+
+
+/* =========================================
+   Content
+========================================= */
+
+.notification-content {
+
+    flex: 1;
+}
+
+.notification-header {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-bottom: 10px;
+}
+
+
+/* =========================================
+   Types
+========================================= */
+
+.notification-type {
+
+    padding: 4px 9px;
+
+    border-radius: 12px;
+
+    font-size: 10px;
+
+    font-weight: 700;
+}
+
+
+/* Info */
+
+.type-info {
+
+    color: #79a8ff;
+
+    background: rgba(79, 140, 255, 0.12);
+}
+
+
+/* Success */
+
+.type-success {
+
+    color: #7ee787;
+
+    background: rgba(126, 231, 135, 0.12);
+}
+
+
+/* Warning */
+
+.type-warning {
+
+    color: #f5c542;
+
+    background: rgba(245, 197, 66, 0.12);
+}
+
+
+/* Danger */
+
+.type-danger {
+
+    color: #ff6b6b;
+
+    background: rgba(255, 107, 107, 0.12);
+}
+
+
+/* =========================================
+   Dot
+========================================= */
+
+.unread-dot {
+
+    width: 7px;
+
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: #4f8cff;
+}
+
+
+/* =========================================
+   Text
+========================================= */
+
+.notification-card h3 {
+
+    color: #eeeeee;
+
+    font-size: 17px;
+
+    margin-bottom: 7px;
+}
+
+.notification-card p {
+
+    color: #999;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+
+    margin-bottom: 10px;
+}
+
+.notification-card small {
+
+    color: #666;
+
+    font-size: 11px;
+}
+
+
+/* =========================================
+   Actions
+========================================= */
+
+.notification-actions {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+}
+
+
+/* =========================================
+   Mobile
+========================================= */
+
+@media (max-width: 700px) {
+
+    .notification-card {
+
+        flex-direction: column;
+    }
+
+    .notification-actions {
+
+        width: 100%;
+    }
+
+    .notification-actions form {
+
+        flex: 1;
+    }
+
+    .notification-actions button {
+
+        width: 100%;
+    }
+
+}
+
+
+
+/*------------SETTINGS TASK-------------*/
+
+/* =========================================
+   LUMIO SETTINGS
+========================================= */
+
+.settings-page-header {
+    margin-bottom: 30px;
+}
+
+.settings-label {
+    display: inline-block;
+
+    color: #79a8ff;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    margin-bottom: 8px;
+}
+
+.settings-page-header h1 {
+    font-size: 34px;
+
+    margin-bottom: 8px;
+
+    color: #eeeeee;
+}
+
+.settings-page-header p {
+    color: #888;
+
+    font-size: 14px;
+}
+
+
+/* =========================================
+   Messages
+========================================= */
+
+.settings-message {
+    padding: 13px 16px;
+
+    border-radius: 9px;
+
+    margin-bottom: 20px;
+
+    max-width: 1000px;
+
+    font-size: 14px;
+}
+
+.settings-message.success {
+    background: rgba(126, 231, 135, 0.1);
+
+    border: 1px solid rgba(126, 231, 135, 0.2);
+
+    color: #7ee787;
+}
+
+.settings-message.error {
+    background: rgba(255, 107, 107, 0.1);
+
+    border: 1px solid rgba(255, 107, 107, 0.2);
+
+    color: #ff6b6b;
+}
+
+
+/* =========================================
+   Grid
+========================================= */
+
+.settings-grid {
+    max-width: 1000px;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 20px;
+}
+
+
+/* =========================================
+   Card
+========================================= */
+
+.settings-card {
+    background: #202020;
+
+    border: 1px solid #2e2e2e;
+
+    border-radius: 14px;
+
+    padding: 24px;
+
+    transition:
+        border-color 0.2s,
+        transform 0.2s;
+}
+
+.settings-card:hover {
+    border-color: #3d3d3d;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================
+   Card Header
+========================================= */
+
+.settings-card-header {
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    margin-bottom: 25px;
+}
+
+.settings-icon {
+    width: 42px;
+
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #292929;
+
+    border: 1px solid #363636;
+
+    border-radius: 10px;
+
+    font-size: 19px;
+}
+
+.settings-card-header h2 {
+    color: #eeeeee;
+
+    font-size: 18px;
+
+    margin-bottom: 3px;
+}
+
+.settings-card-header p {
+    color: #777;
+
+    font-size: 12px;
+}
+
+
+/* =========================================
+   Form
+========================================= */
+
+.settings-form-group {
+    margin-bottom: 17px;
+}
+
+.settings-form-group label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #aaa;
+
+    font-size: 12px;
+
+    font-weight: 600;
+}
+
+.settings-form-group input {
+    width: 100%;
+
+    padding: 11px 13px;
+
+    background: #191919;
+
+    color: #eeeeee;
+
+    border: 1px solid #343434;
+
+    border-radius: 8px;
+
+    outline: none;
+
+    font-size: 13px;
+
+    transition: border 0.2s;
+}
+
+.settings-form-group input:focus {
+    border-color: #4f8cff;
+}
+
+
+/* =========================================
+   Button
+========================================= */
+
+.settings-btn {
+    border: none;
+
+    padding: 10px 16px;
+
+    border-radius: 8px;
+
+    background: #4f8cff;
+
+    color: white;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.settings-btn:hover {
+    background: #3f7ee8;
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================
+   Theme Options
+========================================= */
+
+.theme-options {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 12px;
+
+    margin-bottom: 20px;
+}
+
+.theme-option {
+    position: relative;
+
+    cursor: pointer;
+}
+
+.theme-option input {
+    position: absolute;
+
+    opacity: 0;
+}
+
+.theme-preview {
+    height: 95px;
+
+    border-radius: 9px;
+
+    overflow: hidden;
+
+    border: 2px solid transparent;
+
+    margin-bottom: 9px;
+
+    transition: 0.2s;
+}
+
+.theme-option input:checked + .theme-preview {
+    border-color: #4f8cff;
+}
+
+.dark-preview {
+    background: #191919;
+}
+
+.dark-preview .preview-bar {
+    height: 20px;
+
+    background: #252525;
+}
+
+.dark-preview .preview-content {
+    padding: 12px;
+}
+
+.dark-preview .preview-content div {
+    height: 7px;
+
+    background: #333;
+
+    border-radius: 4px;
+
+    margin-bottom: 7px;
+}
+
+.light-preview {
+    background: #f5f5f5;
+}
+
+.light-preview .preview-bar {
+    height: 20px;
+
+    background: #ffffff;
+
+    border-bottom: 1px solid #ddd;
+}
+
+.light-preview .preview-content {
+    padding: 12px;
+}
+
+.light-preview .preview-content div {
+    height: 7px;
+
+    background: #ddd;
+
+    border-radius: 4px;
+
+    margin-bottom: 7px;
+}
+
+.theme-option strong {
+    display: block;
+
+    color: #ddd;
+
+    font-size: 13px;
+}
+
+.theme-option span {
+    display: block;
+
+    color: #777;
+
+    font-size: 11px;
+
+    margin-top: 3px;
+}
+
+
+/* =========================================
+   Notification Toggle
+========================================= */
+
+.toggle-setting {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 15px;
+
+    background: #191919;
+
+    border: 1px solid #303030;
+
+    border-radius: 9px;
+
+    margin-bottom: 18px;
+}
+
+.toggle-setting strong {
+    display: block;
+
+    color: #ddd;
+
+    font-size: 13px;
+
+    margin-bottom: 4px;
+}
+
+.toggle-setting p {
+    color: #777;
+
+    font-size: 11px;
+}
+
+
+/* Checkbox */
+
+.toggle-setting input {
+    width: 18px;
+
+    height: 18px;
+
+    cursor: pointer;
+}
+
+
+/* =========================================
+   LIGHT MODE
+========================================= */
+
+html.light-mode body {
+    background: #f5f6f8;
+
+    color: #222;
+}
+
+html.light-mode .sidebar {
+    background: #ffffff;
+
+    border-right-color: #e3e3e3;
+}
+
+html.light-mode .main-content {
+    background: #f5f6f8;
+}
+
+html.light-mode .settings-card {
+    background: #ffffff;
+
+    border-color: #e4e4e4;
+}
+
+html.light-mode .settings-card:hover {
+    border-color: #d0d0d0;
+}
+
+html.light-mode .settings-card-header h2,
+html.light-mode .settings-page-header h1 {
+    color: #222;
+}
+
+html.light-mode .settings-card-header p,
+html.light-mode .settings-page-header p {
+    color: #777;
+}
+
+html.light-mode .settings-icon {
+    background: #f4f4f4;
+
+    border-color: #e1e1e1;
+}
+
+html.light-mode .settings-form-group label {
+    color: #555;
+}
+
+html.light-mode .settings-form-group input {
+    background: #f8f8f8;
+
+    color: #222;
+
+    border-color: #ddd;
+}
+
+html.light-mode .toggle-setting {
+    background: #f8f8f8;
+
+    border-color: #ddd;
+}
+
+html.light-mode .toggle-setting strong {
+    color: #333;
+}
+
+html.light-mode .theme-option strong {
+    color: #333;
+}
+
+
+/* =========================================
+   Responsive
+========================================= */
+
+@media (max-width: 800px) {
+
+    .settings-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+@media (max-width: 500px) {
+
+    .settings-page-header h1 {
+        font-size: 27px;
+    }
+
+    .settings-card {
+        padding: 18px;
+    }
+
+    .theme-options {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+html.light-mode .task-form,
+html.light-mode .task-form input,
+html.light-mode .form-group textarea,
+html.light-mode .empty-state,
+html.light-mode .empty-state h3,
+html.light-mode .form-group select,
+html.light-mode .task-card
+{
+    background: white !important;
+    color: black !important;
+    border-color: #ddd !important;
+}
+html.light-mode .empty-state{
+    border: 2px solid;
+}
+
+
+html.light-mode .module-header h1,
+html.light-mode .task-form h2,
+html.light-mode .task-info h3,
+html.light-mode .section-header h2 {
+    color: black !important;
+}
+html.light-mode .task-info p,
+html.light-mode .module-header p {
+    color: #555 !important;
+}

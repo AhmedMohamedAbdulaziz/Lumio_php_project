@@ -1,4 +1,10 @@
+/* =============================================
+   profile.css — Styles for profile.php
+   ============================================= */
 
+/* Reuses .dashboard-header from dashboard.css */
+
+/* ---------- Card Panel ---------- */
 .card-panel {
     background: #202020;
     border: 1px solid #2e2e2e;
@@ -11,8 +17,10 @@
     font-size: 18px;
     margin-bottom: 15px;
 }
+
+/* ---------- Profile Form ---------- */
 .profile-form {
-    max-width: 100%;
+    max-width: 500px;
 }
 
 .form-group {
@@ -40,6 +48,8 @@
     outline: none;
     border-color: #4f8cff;
 }
+
+/* ---------- Dashboard Header (reused here) ---------- */
 .dashboard-header {
     margin-bottom: 30px;
 }
