@@ -234,5 +234,5 @@ This project is open source and available under the [MIT License](LICENSE).
 ---
 
 <div align="center">
-  Made with ❤️ as an NTI Training Project
+  Made  as an NTI Training Project
 </div>
