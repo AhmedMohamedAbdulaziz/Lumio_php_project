@@ -186,16 +186,12 @@
 }
 
 .team-actions .btn {
-    padding: 6px 12px;
+    padding: 6px;
     border-radius: 6px;
     border: none;
     font-size: 12px;
     cursor: pointer;
-}
-
-.team-actions .btn-save {
-    background: #2563eb;
-    color: #fff;
+    width: 120px ;
 }
 
 .team-actions .btn-danger {
@@ -207,7 +203,7 @@
     background: #2563eb;
     color: #fff;
     border: none;
-    padding: 6px 12px;
+    padding: 6px;
     border-radius: 6px;
     font-size: 12px;
     cursor: pointer;

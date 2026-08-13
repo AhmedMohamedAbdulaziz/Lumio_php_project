@@ -24,7 +24,7 @@ function renderPages($pdo, $userId, $parentId, $activeId = null) {
 
 <div class="sidebar">
     <div class="sidebar-header">
-        <span>Lumio ✨</span>
+       <a href="dashboard.php" class="nav-item" > <span>Lumio ✨</span></a>
         <a href="logout.php" class="logout-link">Logout</a>
     </div>
 
@@ -44,7 +44,7 @@ function renderPages($pdo, $userId, $parentId, $activeId = null) {
         <a href="file_manager.php" class="nav-item <?= $currentPage === 'file_manager.php' ? 'active' : '' ?>">📂 File Manager</a>
         <a href="settings.php" class="nav-item <?= $currentPage === 'settings.php' ? 'active' : '' ?>">⚙️ Settings</a>
         <a href="notifications.php" class="nav-item <?= $currentPage === 'notifications.php' ? 'active' : '' ?>">🔔 Notifications</a>
-        <a href="templates.php" class="nav-item <?= $currentPage === 'templates.php' ? 'active' : '' ?>">📑 Templates</a>
+        <!-- <a href="templates.php" class="nav-item <?= $currentPage === 'templates.php' ? 'active' : '' ?>">📑 Templates</a> -->
         <a href="trash.php" class="nav-item <?= $currentPage === 'trash.php' ? 'active' : '' ?>">🗑 Trash</a>
     </div>
 
